@@ -1,0 +1,61 @@
+{
+  "name": "gql-social_media-server",
+  "version": "1.0.0",
+  "description": "a social media server made with GQL and mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "nmodexec": "set NODE_ENV=dev&&ts-node src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deevo-sage/GQL-social_media-server.git"
+  },
+  "keywords": [
+    "gql",
+    "mongoDB",
+    "apollo",
+    "server",
+    "social",
+    "media"
+  ],
+  "author": "Sidharth Sahni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deevo-sage/GQL-social_media-server/issues"
+  },
+  "homepage": "https://github.com/deevo-sage/GQL-social_media-server#readme",
+  "dependencies": {
+    "@babel/register": "^7.15.3",
+    "@graphql-tools/load-files": "^6.4.0",
+    "@graphql-tools/merge": "^8.1.2",
+    "apollo-server": "^3.3.0",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.3",
+    "nodemon": "^2.0.12"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/",
+      "dist/",
+      "coverage/"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "yarn nmodexec",
+    "execMap": {
+      "ts": "node -r ts-node/register"
+    },
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,json,ts,gql"
+  },
+  "devDependencies": {
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}

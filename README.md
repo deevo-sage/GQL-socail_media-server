@@ -1,1 +1,7 @@
-# GQL-socail_media-server
+# SOCIAL MEDIA SERVER 
+
+## to-do
+
+- add types for  
+- - user 
+- - 
