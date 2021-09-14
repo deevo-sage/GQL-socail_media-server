@@ -9,6 +9,8 @@ const server = new ApolloServer({
   cors: { origin: "*" },
   resolvers,
   typeDefs,
+  mocks: true,
+  mockEntireSchema: true,
 });
 server.listen(PORT).then(() => {
   console.log(`server listening on http://localhost:${PORT}`);

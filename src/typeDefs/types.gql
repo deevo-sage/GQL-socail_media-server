@@ -1,0 +1,58 @@
+type User {
+  _id: ID!
+  name: String!
+  userName: String!
+  email: String!
+  password: String!
+  profilePicUrl: String!
+  Profile: Profile!
+}
+type Profile {
+  _id: ID!
+  followers: Int!
+  following: Int!
+  user: User!
+  posts: [Post]!
+  savedPosts: [Post]!
+  taggedPosts: [Post]!
+}
+
+type Media {
+  type: String
+  url: String
+}
+
+type Post {
+  _id: ID!
+  text: String!
+  media: [Media]
+  user: User!
+  tags: [Tag]!
+  created_at: String!
+}
+enum TagType {
+  MENTION
+  HASHTAG
+}
+type Tag {
+  type: TagType
+  uuid: ID!
+}
+type Message {
+  _id: ID!
+  text: String!
+  user: User!
+  timeStamp: String!
+  attachments: [Media]
+}
+
+type FollowRequests {
+  _id: ID!
+  to: User!
+  by: User!
+  status: String!
+}
+type Notification {
+  _id: ID!
+  text: String!
+}
